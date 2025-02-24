@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Examination System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Online Exam Proctoring</h1>
+    </header>
+
+    <!-- Login Section -->
+    <div class="container" id="login-section">
+        <div class="login-box">
+            <h2>Student Login</h2>
+            <form id="login-form">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Exam Section -->
+    <div class="container hidden" id="exam-section">
+        <div class="exam-box">
+            <div class="header">
+                <h2>Online Examination</h2>
+                <div class="timer">Time Left: <span id="timer">30:00</span></div>
+            </div>
+            <!-- Removed Proctoring Status -->
+            <div class="question" id="question-container">
+                <!-- Questions will be dynamically loaded here -->
+            </div>
+            <div class="navigation">
+                <button id="prev-btn" class="btn-secondary">Previous</button>
+                <button id="next-btn" class="btn-secondary">Next</button>
+                <button id="submit-btn" class="btn-primary">Submit Exam</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Section -->
+    <div class="container hidden" id="result-section">
+        <div class="result-box">
+            <h2>Exam Results</h2>
+            <div class="result-details" id="result-details">
+                <!-- Results will be displayed here -->
+            </div>
+            <button id="logout-btn" class="btn-secondary">Logout</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Online Exam System. All rights reserved.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
